@@ -42,6 +42,7 @@ export default function GamePage() {
       }
     }
     loadInitialState()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId, router])
 
   const triggerNarrative = async (currentState: GameState, playerChoice: string, currentHistory: Message[]) => {

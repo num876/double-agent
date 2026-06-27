@@ -18,7 +18,6 @@ export function TypewriterText({ text, speed = 15, onComplete }: { text: string,
   useEffect(() => {
     if (isRedacted) return
 
-    let i = 0
     // We want to stream from where we are to the end of the text
     // If text is updating (streaming), we just keep appending
     const interval = setInterval(() => {

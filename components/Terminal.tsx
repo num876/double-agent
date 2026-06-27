@@ -42,7 +42,7 @@ export function Terminal({ messages, streamingText, isStreaming, sceneTitle }: T
               <div className="text-primary whitespace-pre-wrap">{parsed.narrative}</div>
               {parsed.speakerLines && parsed.speakerLines.length > 0 && (
                 <div className="flex flex-col gap-2 mt-4">
-                  {parsed.speakerLines.map((line: any, i: number) => (
+                  {parsed.speakerLines.map((line: { character: string, line: string }, i: number) => (
                     <div key={i} className="text-primary font-sans text-base">
                       <span className="text-secondary uppercase tracking-wider mr-3">
                         {line.character}:
@@ -54,7 +54,7 @@ export function Terminal({ messages, streamingText, isStreaming, sceneTitle }: T
               )}
             </div>
           )
-        } catch (e) {
+        } catch {
           return <div key={idx} className="text-danger">Error parsing record.</div>
         }
       })}

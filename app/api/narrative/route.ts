@@ -145,8 +145,8 @@ export async function POST(req: Request) {
         }
       }
     )
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('API Error:', error)
-    return new Response(JSON.stringify({ error: error.message }), { status: 500 })
+    return new Response(JSON.stringify({ error: (error as Error).message }), { status: 500 })
   }
 }
